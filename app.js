@@ -9,9 +9,13 @@ button.addEventListener("click", () =>{
     let link = `${url}weather?q=${inputValue.value}&appid=${key}&units=metric&lang=en`
     fetch(link)
     .then(weather =>{
+        if(!weather.ok){
+            throw new Error("something went wrong")
+        }
         return weather.json()
     })
     .then(displayResult)
+    .catch((err) => console.log(err))
 })
 
 const displayResult = (result) =>{
