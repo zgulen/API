@@ -30,7 +30,6 @@ const displayResult = (result) =>{
     li.appendChild(temperature)
     li.appendChild(icon)
     li.appendChild(description)
-    
     city.innerHTML = `${result.name}  <sup>${result.sys.country}</sup>`
     temperature.textContent = `${Math.round(result.main.temp_max)}°C`
     description.textContent = `${result.weather[0].description}`
