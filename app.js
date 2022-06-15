@@ -29,7 +29,7 @@ button.addEventListener("click", (e) => {
 const displayResult = (result) => {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === document.querySelector("input").value) {
-            error.textContent = "You already choose this city"
+            error.textContent = "You already chose this city"
             inputValue.value = ""
             return
         }
