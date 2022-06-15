@@ -3,6 +3,7 @@ const key = "0c782db722756c7a678544f42572f87d"
 
 const button = document.querySelector("button")
 const inputValue = document.querySelector("input")
+let arr = []
 const ulCities = document.querySelector(".cities")
 
 //! when error occurs elements below will show up
@@ -22,12 +23,18 @@ button.addEventListener("click", (e) => {
         })
         .then(displayResult)
         .catch(errorMessage)
+
 })
 
 const displayResult = (result) => {
-    console.log(typeof result.name, result.name.toLowerCase())
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === document.querySelector("input").value) {
+            error.textContent = "You already choose this city"
+            inputValue.value = ""
+            return
+        }
+    }
     //! input value deleted and focused
-    inputValue.value = ""
     inputValue.focus()
     //! creating elements
     let li = document.createElement("li")
@@ -54,7 +61,14 @@ const displayResult = (result) => {
     icon.src = iconurl
     //! delete text content
     error.textContent = ""
+    // console.log(city.textContent.toLowerCase().slice(0, city.textContent.indexOf(" ")+1))
+
+
     
+    console.log(arr)
+    arr.push(document.querySelector("input").value)
+
+    inputValue.value = ""
 }
 
 const errorMessage = () => {
@@ -76,7 +90,7 @@ inputValue.addEventListener("keydown", (e) => {
             .then(displayResult)
             .catch(errorMessage)
     }
-    
+
 })
 
 
