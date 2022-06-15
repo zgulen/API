@@ -28,7 +28,7 @@ button.addEventListener("click", (e) => {
 
 const displayResult = (result) => {
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === document.querySelector("input").value) {
+        if (arr[i].toLowerCase() === document.querySelector("input").value.toLocaleLowerCase()) {
             error.textContent = "You already chose this city"
             inputValue.value = ""
             return
@@ -92,5 +92,3 @@ inputValue.addEventListener("keydown", (e) => {
     }
 
 })
-
-
