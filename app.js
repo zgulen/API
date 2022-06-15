@@ -10,7 +10,8 @@ const span = document.querySelector(".msg")
 const error = document.createElement("p")
 span.appendChild(error)
 //! ----------
-button.addEventListener("click", () => {
+button.addEventListener("click", (e) => {
+    e.preventDefault()
     let link = `${url}weather?q=${inputValue.value}&appid=${key}&units=metric&lang=en`
     fetch(link)
         .then(weather => {
