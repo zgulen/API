@@ -1,6 +1,6 @@
 # OpenWeather 
 
-![](./gif/weather.giff)
+![](./gif/weather.gif)
 
 ### User story;
 
